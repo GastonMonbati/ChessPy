@@ -4,7 +4,8 @@ import datetime
 from chess_tournament_app.views import main_menu
 from chess_tournament_app.views import player_menus
 from chess_tournament_app.views import tournament_menus
-from chess_tournament_app.controllers.database_operator import DatabaseOperator as Db
+from chess_tournament_app.controllers.database_operator \
+    import DatabaseOperator as Db
 
 
 def print_logo():
@@ -29,8 +30,7 @@ def print_logo():
   / ___| |__   ___  ___ ___  |_   _|__  _   _ _ __ _ __   __ _ _ __ ___   ___ _ __ | |_ 
  | |   | '_ \ / _ \/ __/ __|   | |/ _ \| | | | '__| '_ \ / _` | '_ ` _ \ / _ \ '_ \| __|
  | |___| | | |  __/\__ \__ \   | | (_) | |_| | |  | | | | (_| | | | | | |  __/ | | | |_ 
-  \____|_| |_|\___||___/___/   |_|\___/ \__,_|_|  |_| |_|\__,_|_| |_| |_|\___|_| |_|\__|
-                                                                                        
+  \____|_| |_|\___||___/___/   |_|\___/ \__,_|_|  |_| |_|\__,_|_| |_| |_|\___|_| |_|\__|                                                                                  
     """
     print(logo)
 
@@ -81,8 +81,9 @@ def valid_menu_choice(answer, opt_num):
 
 
 def turn_back_to(current_class_name: str):
-    """Turns back to the last Menu by calling the last Class before the current one.
-       If current class = MainMenu -> it closes the Program"""
+    """Turns back to the last Menu by calling the
+        last Class before the current one.
+        If current class = MainMenu -> it closes the Program"""
 
     if current_class_name == "MainMenu":
         cls()

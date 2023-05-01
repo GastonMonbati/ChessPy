@@ -1,7 +1,8 @@
 from datetime import datetime
 
 from chess_tournament_app.controllers import utils
-from chess_tournament_app.controllers.database_operator import DatabaseOperator as Db
+from chess_tournament_app.controllers.database_operator \
+    import DatabaseOperator as Db
 from chess_tournament_app.models.round import Round
 from chess_tournament_app.models.match import Match
 

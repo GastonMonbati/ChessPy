@@ -12,6 +12,7 @@ class Database:
     Creates and saves a new database director and
     file if they don't exist already.
     """
+
     def __init__(self):
         """Database constructor"""
         if not os.path.exists(DIRECTORY):

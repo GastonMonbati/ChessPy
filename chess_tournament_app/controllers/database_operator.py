@@ -29,7 +29,9 @@ class DatabaseOperator:
 
     def load_all_players(self):
         """Loads all players and returns them in a list"""
-        all_players_serialized = [p for p in self.database.players_table.all() if not p["deleted"]]
+        all_players_serialized = [
+            p for p in self.database.players_table.all() if not p["deleted"]
+        ]
 
         return all_players_serialized
 
@@ -37,7 +39,9 @@ class DatabaseOperator:
         """Loads all players matching a given key
            and returns a dict of all matches"""
 
-        results = self.database.players_table.search(self.query[filter_by] == key_word)
+        results = self.database.players_table.search(
+            self.query[filter_by] == key_word
+        )
         return results
 
     def player_by_id(self, player_id: int):
@@ -51,8 +55,7 @@ class DatabaseOperator:
         """Update the value of a given key in the database """
 
         self.database.players_table.update(
-            {key: new_value},
-            doc_ids=[player_id]
+            {key: new_value}, doc_ids=[player_id]
         )
 
     def update_all_matching_players(self, key: str, old_value: str, new_value: str):
@@ -64,7 +67,8 @@ class DatabaseOperator:
         )
 
     def hard_delete_player(self, player_id: int):
-        """Player Object gets really deleted from the database"""
+        """Player Object gets really 
+        deleted from the database"""
         self.database.players_table.remove(doc_ids=[player_id])
 
     def delete_player(self, player_id: int):
@@ -74,7 +78,7 @@ class DatabaseOperator:
             doc_ids=[player_id]
         )
 
-    # ----------------------------------Tournament Operations--------------------------------------
+    # ------Tournament Operations-------
 
     def save_tournament(self,
                         name,
@@ -101,12 +105,16 @@ class DatabaseOperator:
             leaderboard=leaderboard
         ).create()
 
-        self.database.tournaments_table.insert(serialized_tournament)
+        self.database.tournaments_table.insert(
+            serialized_tournament
+        )
 
     def load_all_tournaments(self):
         """Loads all players and returns them in a list"""
         all_tournaments_serialized = [
-            t for t in self.database.tournaments_table.all() if not t["deleted"]]
+            t for t in self.database.tournaments_table.all()
+            if not t["deleted"]
+        ]
 
         return all_tournaments_serialized
 
@@ -131,7 +139,8 @@ class DatabaseOperator:
 
     def tournament_by_id(self, tournament_id: int):
         """Takes a player ID and returns
-           the matching Player as a player object"""
+           the matching Player
+           as a player object"""
         tournament = self.database.tournaments_table.get(doc_id=tournament_id)
         return tournament
 

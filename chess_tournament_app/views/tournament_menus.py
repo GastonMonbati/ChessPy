@@ -2,8 +2,11 @@ from time import sleep
 
 from chess_tournament_app.views import menu_creator
 from chess_tournament_app.controllers import utils
-from chess_tournament_app.controllers.tournament_operator import TournamentOperator
-from chess_tournament_app.controllers.database_operator import DatabaseOperator as Db
+from chess_tournament_app.controllers.tournament_operator \
+    import TournamentOperator
+
+from chess_tournament_app.controllers.database_operator \
+    import DatabaseOperator as Db
 
 DEFAULT_ROUNDS = 4
 
@@ -80,7 +83,8 @@ class NewTournament:
 
         while len(self.location) < 5:
             self.location = input(
-                f"\n{self.spacer}What´s the location of the Tournament?: ").title()
+                f"\n{self.spacer}What´s the location of the Tournament?: "
+                ).title()
 
         # ----------------------------Enter Date-------------------------------
 
@@ -598,7 +602,8 @@ class PlayTournamentMenu:
         available_ids = [str(t.doc_id) for t in self.unfinished_tournaments]
 
         tournament_id = ""
-        while not utils.valid_int(tournament_id) or tournament_id not in available_ids:
+        while not utils.valid_int(tournament_id) \
+                or tournament_id not in available_ids:
             tournament_id = input(
                 f"{self.spacer}"
                 f"Which tournament do you want to start? (Enter ID): ")

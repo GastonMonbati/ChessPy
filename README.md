@@ -29,7 +29,7 @@ To get started, all you need is a computer with Python installed (which, let's b
  `git clone`
  `cd chess_tournament_app`
 5. Create your Virtual Environment by running the command: `python -m venv .venv`
-6. Install the Requirements by running the command: `pip install -r requirements.txt`
+6. Install the Requirements by running the command: ``
 
 Once you have it installed, you can run the program and you'll be on your way to chess tournament glory in no time
 

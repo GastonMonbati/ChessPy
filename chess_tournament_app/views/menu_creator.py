@@ -1,4 +1,5 @@
-from chess_tournament_app.controllers.utils import valid_menu_choice, turn_back_to
+from chess_tournament_app.controllers.utils \
+    import valid_menu_choice, turn_back_to
 
 
 class MenuScreen:
@@ -11,7 +12,8 @@ class MenuScreen:
          current_site = self.__class__.__name__
          (returns the name of the class that called it)
 
-         If no current_site is given it will show the option to close the program.
+         If no current_site is given it will show the
+         option to close the program.
          If no title is given, it will show no title.
          If no options are given, it will not show options.
          """
